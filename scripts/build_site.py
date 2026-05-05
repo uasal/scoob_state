@@ -143,9 +143,9 @@ def build_html(tables, commit_sha, commit_short_sha, commit_date):
     esc_short = html.escape(commit_short_sha)
     esc_date = html.escape(commit_date)
 
-    commit_url = f"https://github.com/{GITHUB_REPO}/commit/{esc_sha}"
+    commit_url = f"https://github.com/{GITHUB_REPO}/commit/{commit_sha}"
     sha_link = (
-        f'<a href="{commit_url}">{esc_short}</a>'
+        f'<a href="{html.escape(commit_url)}">{esc_short}</a>'
         if commit_sha != "unknown"
         else "unknown"
     )
