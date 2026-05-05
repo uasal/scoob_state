@@ -1,5 +1,7 @@
 # this machine readable TOML file defines the common parameters between all tools in this repo.
 # It generally contains all the baselined details of the instrument that always apply.
+# installed means an optic is present, absent means an optic that has been installed has been removed
+# from the physical setup and should not be included in analysis
 #OPTICS APPEAR IN ORDER OF INCIDENCE
 
 [Source]
@@ -9,20 +11,37 @@ Model = "SuperK Compact"
 SN = ""
 z= ""
 
-[LP]
+[SM Fiber]
 state="installed"
-MFG = "meadowlark optics"
-Model = "DP-100-VIS"
-DOI = "https://www.meadowlark.com/shop/polarizers/precision-linear-polarizer/?17785_attr_pa_wavelength-range-nm%5B0%5D=523&17785_results_per_page=10&17785_filtered=true"
 SN =""
 z= ""
 
-[QWP1]
+[Fiber Attenuator]
 state="installed"
+MFG = ""
+Model = ""
+SN =""
+z= ""
+
+[SM Fiber]
+state="installed"
+MFG = ""
+Model = ""
+SN =""
+z= ""
+
+[LP]
+state="absent"
+MFG = "meadowlark optics"
+Model = "DP-100-VIS"
+URL = "https://www.meadowlark.com/shop/polarizers/precision-linear-polarizer/?17785_attr_pa_wavelength-range-nm%5B0%5D=523&17785_results_per_page=10&17785_filtered=true"
+z= ""
+
+[QWP1]
+state="absent"
 MFG = "BVO"
 Model = "AQWP3"
 SN="https://boldervision.com/waveplates/aqwp3/"
-z= ""
 
 [LENS1]
 state="installed"
@@ -128,14 +147,14 @@ SN=""
 description=""
 
 [SCI.QWP]
-state="installed"
+state="absent"
 MFG = "BVO"
 Model = "AQWP3"
 SN="https://boldervision.com/waveplates/aqwp3/"
 z= ""
 
 [SCI.LP]
-state="installed"
+state="absent"
 MFG = "meadowlark optics"
 Model = "DP-100-VIS"
 DOI = "https://www.meadowlark.com/shop/polarizers/precision-linear-polarizer/?17785_attr_pa_wavelength-range-nm%5B0%5D=523&17785_results_per_page=10&17785_filtered=true"
