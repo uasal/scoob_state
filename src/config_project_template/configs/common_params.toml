@@ -11,16 +11,17 @@ z= ""
 
 [LP]
 state="installed"
-MFG = ""
-Model = ""
+MFG = "meadowlark optics"
+Model = "DP-100-VIS"
+DOI = "https://www.meadowlark.com/shop/polarizers/precision-linear-polarizer/?17785_attr_pa_wavelength-range-nm%5B0%5D=523&17785_results_per_page=10&17785_filtered=true"
 SN =""
 z= ""
 
 [QWP1]
 state="installed"
-MFG = ""
-Model = ""
-SN=""
+MFG = "BVO"
+Model = "AQWP3"
+SN="https://boldervision.com/waveplates/aqwp3/"
 z= ""
 
 [LENS1]
@@ -45,9 +46,11 @@ description=""
 [OAP1]  # 
 state="installed"
 purpose="collimator"
-MFG = ""
+MFG = "NuTek"
 SN = ""
-FL=
+Diameter = "5um"
+FL=""
+Coating="Al+MgF2"
 z=""
 
 [PUPIL1] #
@@ -126,9 +129,18 @@ description=""
 
 [SCI.QWP]
 state="installed"
+MFG = "BVO"
+Model = "AQWP3"
+SN="https://boldervision.com/waveplates/aqwp3/"
+z= ""
 
 [SCI.LP]
 state="installed"
+MFG = "meadowlark optics"
+Model = "DP-100-VIS"
+DOI = "https://www.meadowlark.com/shop/polarizers/precision-linear-polarizer/?17785_attr_pa_wavelength-range-nm%5B0%5D=523&17785_results_per_page=10&17785_filtered=true"
+SN =""
+z= ""
 
 [SCI.FOLD]
 state="installed"
