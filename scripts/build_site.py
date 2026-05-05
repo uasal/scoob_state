@@ -57,9 +57,17 @@ def parse_toml_ordered(path: Path):
                 key = kv_match.group(1).strip()
                 value_raw = kv_match.group(2).strip()
                 # Strip surrounding quotes for display
-                if (value_raw.startswith('"') and value_raw.endswith('"')):
+                if (
+                    len(value_raw) >= 2
+                    and value_raw.startswith('"')
+                    and value_raw.endswith('"')
+                ):
                     value_raw = value_raw[1:-1]
-                elif (value_raw.startswith("'") and value_raw.endswith("'")):
+                elif (
+                    len(value_raw) >= 2
+                    and value_raw.startswith("'")
+                    and value_raw.endswith("'")
+                ):
                     value_raw = value_raw[1:-1]
                 entries.append((key, value_raw))
 
@@ -86,7 +94,7 @@ def render_entries(entries):
     for key, value in rows:
         items.append(
             f"    <dt>{html.escape(key)}</dt>"
-            f"<dd>{html.escape(value) if value else '<em>—</em>'}</dd>"
+            f"<dd>{html.escape(value) if value != '' else '<em>—</em>'}</dd>"
         )
     return "<dl>\n" + "\n".join(items) + "\n</dl>"
 
