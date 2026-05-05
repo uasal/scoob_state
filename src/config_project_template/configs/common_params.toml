@@ -9,15 +9,36 @@ Model = "SuperK Compact"
 SN = ""
 z= ""
 
-[LP]
+[SM Fiber]
 state="installed"
 MFG = ""
 Model = ""
 SN =""
 z= ""
 
-[QWP1]
+[Fiber Attenuator]
 state="installed"
+MFG = ""
+Model = ""
+SN =""
+z= ""
+
+[SM Fiber]
+state="installed"
+MFG = ""
+Model = ""
+SN =""
+z= ""
+
+[LP]
+state="absent"
+MFG = ""
+Model = ""
+SN =""
+z= ""
+
+[QWP1]
+state="absent"
 MFG = ""
 Model = ""
 SN=""
