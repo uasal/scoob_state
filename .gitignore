@@ -52,3 +52,6 @@ config_project_template.egg-info/
 
 # Ignore setuptools_scm version file
 _version.py
+
+# Generated site (build artifact)
+site/

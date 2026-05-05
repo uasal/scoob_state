@@ -30,6 +30,27 @@ cd config_project_template
 pip install .
 ```
 
+## SCoOB State Website
+
+A live view of the current hardware configuration is published at:
+**<https://uasal.github.io/scoob_state/>**
+
+The page is automatically rebuilt and deployed whenever the `develop` branch is
+updated. It reads `src/config_project_template/configs/common_params.toml` and
+renders each `[Table]` section according to its `state` field:
+
+- `state="installed"` → bold heading, entries always visible.
+- `state="absent"` → light-gray heading, entries collapsed inside `<details>`.
+- Any other state or no state → neutral heading, entries also collapsed.
+
+The site is built by `scripts/build_site.py` (pure Python 3.11 stdlib, no
+external dependencies) and deployed via the
+`.github/workflows/pages.yml` workflow using the official
+[GitHub Pages Actions](https://github.com/actions/deploy-pages).
+
+> **First-time setup:** a repository owner must enable Pages under
+> *Settings → Pages → Source: GitHub Actions* before the workflow can publish.
+
 ## Usage
 
 Included in this repository is an [example notebook] of how an analysis would make use of this (and other) configuration repositories.
