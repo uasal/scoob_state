@@ -1,0 +1,68 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Get commit metadata for TOML file
+        run: |
+          TOML_FILE="src/config_project_template/configs/common_params.toml"
+          git_output=$(git log -1 --format="%H%n%h%n%cI" -- "$TOML_FILE")
+          COMMIT_SHA=$(echo "$git_output" | sed -n '1p')
+          COMMIT_SHORT_SHA=$(echo "$git_output" | sed -n '2p')
+          COMMIT_DATE=$(echo "$git_output" | sed -n '3p')
+          if [ -z "$COMMIT_SHA" ]; then
+            COMMIT_SHA="unknown"
+            COMMIT_SHORT_SHA="unknown"
+            COMMIT_DATE="unknown"
+          fi
+          echo "COMMIT_SHA=${COMMIT_SHA}" >> "$GITHUB_ENV"
+          echo "COMMIT_SHORT_SHA=${COMMIT_SHORT_SHA}" >> "$GITHUB_ENV"
+          echo "COMMIT_DATE=${COMMIT_DATE}" >> "$GITHUB_ENV"
+
+      - name: Build site
+        run: python scripts/build_site.py
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
