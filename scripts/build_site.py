@@ -31,7 +31,7 @@ def parse_toml_ordered(path: Path):
 
     with open(path, encoding="utf-8") as fh:
         for line in fh:
-            # Strip inline comments and trailing whitespace
+            # Strip trailing whitespace
             line_stripped = line.rstrip()
 
             # Match a top-level table header: [Name] or [Name.Sub]
