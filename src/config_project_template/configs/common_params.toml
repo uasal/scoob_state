@@ -7,17 +7,25 @@
 [Source]
 state="installed"
 MFG = "NKT"
-Model = "SuperK Compact"
-SN = ""
+Model = "SuperK Compact (S024-010-020)"
+SN = "K0113381REV00"
 z= ""
+
+[Tunable Filter]
+state = "installed"
+MFG = "NKT"
+Model = "SuperK VARIA (A301-100-000)"
+SN = "K0118021REV00"
 
 [SM Fiber]
 state="installed"
-SN =""
+MFG = "NKT"
+Model = "(SuperK FD 1 PM FC/AP)"
+SN ="K0117193"
 z= ""
 
 [Fiber Attenuator]
-state="installed"
+state="absent"
 MFG = ""
 Model = ""
 SN =""
@@ -72,6 +80,15 @@ FL=""
 Coating="Al+MgF2"
 z=""
 
+[PUPIL MASK] #
+state="installed"
+RMS=""
+Purpose="pupil mask"
+Active_diameter=""
+MFG = "MDL JPL (Black Si)"
+SN = ""
+FL="infinite"
+
 [PUPIL1] #
 state="installed"
 RX="flat"
@@ -105,16 +122,22 @@ Model= "Kilo-C-1.5"
 SN="38AW007#029" 
 description=""
 
+[Wedged CP]
+state="present"
+MFG = "BVO"
+Model = "30 arc-min prototype"
+SN=""
+
 [OAP4]  # 
 state="installed"
 
 
 [FPM]
 state="installed"
-Model = "Custom VVC"
+Model = "Custom VVC (charge 6)"
 MFG="BeamCo"
-SN=""
-description=""
+SN="VVW-Q3-BB20Vis-DM45"
+description="https://github.com/uasal/cdeep_testbed_operations/issues/97"
 
 [FOLD]
 state="installed"
@@ -146,6 +169,18 @@ MFG="UA"
 SN=""
 description=""
 
+[OAP6]  # 
+state="installed"
+
+[OAP7]  # 
+state="installed"
+
+[Wedged CA]
+state="present"
+MFG = "BVO"
+Model = "30 arc-min prototype"
+SN=""
+
 [SCI.QWP]
 state="absent"
 MFG = "BVO"
@@ -171,19 +206,20 @@ state="installed"
 [Sci.Sensor]
 state="installed"
 MFG = "ZWO"
-MODEL = "ASI294"
+MODEL = "ASI294MM-Pro"
+SN="1812911309020900"
 CMOS_QE = ""
 description=""
 
 [LOWFS.L1]
-state="installed"
+state="installed, not used"
 
 [LOWFS.mask]
 state="none"
 
 [LOWFS.Sensor]
-MFG = "ZWO"
-MODEL = "ASI294"
+MFG = "NSV"
+MODEL = ""
 CMOS_QE = ""
 description=""
 
