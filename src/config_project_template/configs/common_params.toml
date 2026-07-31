@@ -6,26 +6,20 @@
 
 [Source]
 state="installed"
-MFG = "NKT"
-Model = "SuperK Compact (S024-010-020)"
-SN = "K0113381REV00"
+MFG = "HÜBNER Photonics"
+Model = "Cobolt 08-NLD (633 nm, 30 mW)"
+SN = "30304"
 z= ""
-
-[Tunable Filter]
-state = "installed"
-MFG = "NKT"
-Model = "SuperK VARIA (A301-100-000)"
-SN = "K0118021REV00"
 
 [SM Fiber]
 state="installed"
-MFG = "NKT"
-Model = "(SuperK FD 1 PM FC/AP)"
-SN ="K0117193"
+MFG = "Schäfter+Kirchhoff"
+Model = "PMC-400RGB-3-18E28E-200"
+SN =""
 z= ""
 
 [Fiber Attenuator]
-state="absent"
+state="installed"
 MFG = ""
 Model = ""
 SN =""
@@ -33,8 +27,8 @@ z= ""
 
 [SM Fiber]
 state="installed"
-MFG = ""
-Model = ""
+MFG = "ThorLabs"
+Model = "P3-S405Y-FC-2"
 SN =""
 z= ""
 
